@@ -83,7 +83,7 @@ public class Hero : MonoBehaviour
 
     void findNearestTarget()
     {
-        float closest = 100000f;
+        float closest = 10f;
         Enemy tempTarget = null;
         foreach (GameObject e in allTargets)
         {

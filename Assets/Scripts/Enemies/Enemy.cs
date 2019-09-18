@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         GameObject h = GameObject.Find("Hero");
-        Vector3.MoveTowards(transform.position, h.transform.position, 10 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, h.transform.position, speed * Time.deltaTime);
     }
 }
