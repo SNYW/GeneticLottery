@@ -6,8 +6,9 @@ using UnityEngine;
 public class Hero : MonoBehaviour
 {
 
-    public List<Enemy> allTargets = new List<Enemy>();
+    public List<GameObject> allTargets = new List<GameObject>();
     public Enemy target;
+    private Transform EnemyHolder;
 
     public float speed;
     public float attackRange;
@@ -16,43 +17,61 @@ public class Hero : MonoBehaviour
     void Start()
     {
         canMove = true;
-        
+        EnemyHolder = GameObject.Find("Enemies").transform;
+        target = null;
+        populateTargetList();
+        findNearestTarget(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(hasTarget() && inRange())
+        
+        if (!hasTarget())
         {
-            attack();
+          findNearestTarget();
         }
-
-
+         
        if(hasTarget() && canMove && !inRange())
         {
-            
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }
+       else if (hasTarget() && inRange())
+        {
+           attack();
         }
     }
 
     private void attack()
     {
-        print("HIYAAA");
-        allTargets.Remove(target);
-        Destroy(target, 2f);
+        print("Attacking -- "+target);
+        allTargets.Remove(target.gameObject);
+        Destroy(target.gameObject);
+        target = null;
         
     }
 
     public bool hasTarget()
     {
-        return allTargets.Count > 0;
+   
+        if (target != null)
+        {
+            print("target is " + target);
+            return true;
+        }
+        else
+        {
+            print("No Targets");
+            return false;
+        }
+        
     }
 
     public bool inRange()
     {
         if (hasTarget())
         {
-            return Vector3.Distance(transform.position, allTargets[0].transform.position) < attackRange;
+            return Vector3.Distance(transform.position, target.gameObject.transform.position) <= attackRange;
             
         }
         else
@@ -61,21 +80,32 @@ public class Hero : MonoBehaviour
         }
     }
 
-    void findTarget()
+    void findNearestTarget()
     {
-        allTargets.Clear();
-        
-        target = null;
         float closest = 100000f;
         Enemy tempTarget = null;
-        foreach (Enemy e in allTargets)
+        foreach (GameObject e in allTargets)
         {
-            float distance = Vector3.Distance(transform.position, e.transform.position);
-            if (distance < closest)
-            {
-                tempTarget = e;
-                closest = distance;
-            }
+                float distance = Vector3.Distance(transform.position, e.transform.position);
+                if (distance < closest)
+                {
+                    tempTarget = e.GetComponent<Enemy>();
+                    closest = distance;
+                }
+            
         }
+        print("Target Selected -- " + tempTarget);
+        target = tempTarget.GetComponent<Enemy>();
+    }
+ 
+    void populateTargetList()
+    {
+        
+        allTargets.Clear();
+        foreach (Transform e in EnemyHolder)
+        {
+            allTargets.Add(e.gameObject);
+        }
+        print("Found "+allTargets.Count+" targets");
     }
 }
