@@ -29,7 +29,8 @@ public class Hero : MonoBehaviour
         
         if (!hasTarget())
         {
-          findNearestTarget();
+            populateTargetList();
+            findNearestTarget();
         }
          
        if(hasTarget() && canMove && !inRange())
