@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemyAmount;
     public float spawnCooldown;
     private float cooldown;
+    public GameObject Center;
 
     private void Awake()
     {
@@ -26,8 +27,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void checkSpawnTimer()
     {
-        if (cooldown <= Time.time)
+        if (cooldown <= Time.time && enemyAmount > 0)
         {
+            
             spawnEnemy(enemyTypes[UnityEngine.Random.Range(0, enemyTypes.Length)]);
             cooldown = Time.time + spawnCooldown;
         }
@@ -35,8 +37,10 @@ public class EnemySpawner : MonoBehaviour
 
     void spawnEnemy(GameObject enemy)
     {
-        GameObject s = Instantiate(enemy, Spawners[UnityEngine.Random.Range(0, Spawners.Length)].transform.position, Quaternion.identity);
+        Vector3 spawnplace = new Vector3(Spawners[UnityEngine.Random.Range(0, Spawners.Length)].transform.position.x, Center.transform.position.y, 0);
+        GameObject s = Instantiate(enemy, spawnplace , Quaternion.identity);
         s.transform.parent = GameObject.Find("Enemies").transform;
+        enemyAmount --;
     }
 
 
