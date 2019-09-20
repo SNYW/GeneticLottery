@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246c5072f5073114abe9e767ae78a864, type: 3}
+  m_Name: StrengthUp
+  m_EditorClassIdentifier: 
+  traitName: Strength Up!
+  description: Physical Attack +10%
+  icon: {fileID: 21300000, guid: 75305ecdb95915a4fb8ee1ccc5c6d831, type: 3}
+  cost: 100

@@ -62,11 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DescriptionText.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
+    <Compile Include="Assets\Scripts\Traits\Trait.cs" />
+    <Compile Include="Assets\Sprites\Traits\TraitObject.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Projects/Game Dev/GeneticLottery/GeneticLottery/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
