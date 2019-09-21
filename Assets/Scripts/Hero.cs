@@ -39,7 +39,7 @@ public class Hero : MonoBehaviour
         if (target == null)
         {   
             animator.SetFloat("Speed", 0);
-            print("Null Target");
+            //print("Null Target");
             populateTargetList();
             findNearestTarget();
         }
@@ -107,7 +107,7 @@ public class Hero : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().flipX = true;
         }
-        print("Attacking -- "+target);
+        //print("Attacking -- "+target);
         Destroy(target.gameObject, 0.2f);
     }
 
@@ -117,12 +117,12 @@ public class Hero : MonoBehaviour
    
         if (target != null)
         {
-            print("target is " + target);
+           //print("target is " + target);
             return true;
         }
         else
         {
-            print("No Targets");
+           //print("No Targets");
             return false;
         }
         
@@ -170,6 +170,6 @@ public class Hero : MonoBehaviour
         {
             allTargets.Add(e.gameObject);
         }
-        print("Found "+allTargets.Count+" targets");
+        //print("Found "+allTargets.Count+" targets");
     }
 }

@@ -25,7 +25,15 @@ public class TraitObject : MonoBehaviour
         cost.text = trait.cost.ToString();
         icon.sprite = trait.icon;
     }
-    
+
+    private void FixedUpdate()
+    {
+        nameText.text = trait.traitName;
+        descriptionText.text = trait.description;
+        cost.text = trait.cost.ToString();
+        icon.sprite = trait.icon;
+    }
+
     public void toggleDescription()
     {
         showDesc = !showDesc;

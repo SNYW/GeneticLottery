@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246c5072f5073114abe9e767ae78a864, type: 3}
-  m_Name: DefaultTrait
+  m_Script: {fileID: 11500000, guid: d3968393c43e5cc47ae1a1859381974c, type: 3}
+  m_Name: TraitList
   m_EditorClassIdentifier: 
-  traitName: DEFAU
-  description: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-  icon: {fileID: 21300000, guid: bcda39a67c63088459dcee92a8202218, type: 3}
-  cost: 100
+  allTraits:
+  - {fileID: 11400000, guid: b18f90117d4724f48a11093eb07663f9, type: 2}
+  - {fileID: 11400000, guid: 0e3305dc1151c7c418efa8af807dcb89, type: 2}

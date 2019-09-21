@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246c5072f5073114abe9e767ae78a864, type: 3}
   m_Name: SpeedUp
   m_EditorClassIdentifier: 
-  traitName: Speed Up!
+  traitName: SPD++
   description: Move Speed +10%
   icon: {fileID: 21300000, guid: d0fad478603108941880271a8e216650, type: 3}
   cost: 100

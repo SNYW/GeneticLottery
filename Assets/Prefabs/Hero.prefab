@@ -104,7 +104,7 @@ MonoBehaviour:
   visionRange: 8
   animator: {fileID: 6269246937797913507}
   speed: 3
-  attackRange: 1
+  attackRange: 1.5
   canMove: 1
   velocity: {x: 0, y: 0, z: 0}
 --- !u!50 &7847575790686661004
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7847575790686661005}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
