@@ -429,7 +429,7 @@ MonoBehaviour:
   currentHealth: {fileID: 11400000, guid: 3a261fd060ea4a742be6e4c3b3135cea, type: 2}
   strength: 10
   speed: 1
-  attackCooldown: 0.6
+  attackCooldown: 1
   cooldown: 0
   attackRange: 0.8
   allTargets:

@@ -22,6 +22,6 @@ public class StrengthUp : StaticTrait
 
     void onDestroy()
     {
-        player.GetComponent<Hero>().strength /= 0.1f;
+        player.GetComponent<Hero>().strength /= 0.9f;
     }
 }

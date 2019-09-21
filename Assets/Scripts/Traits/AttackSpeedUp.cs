@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SpeedUp : StaticTrait
+public class AttackSpeedUp : StaticTrait
 {
 
     private GameObject player;
@@ -11,7 +11,7 @@ public class SpeedUp : StaticTrait
     void Start()
     {
         player = GameObject.Find("Hero");
-        player.GetComponent<Hero>().speed *= 1.1f;
+        player.GetComponent<Hero>().attackCooldown /= 0.9f;
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class SpeedUp : StaticTrait
 
     void onDestroy()
     {
-        player.GetComponent<Hero>().speed /= 0.9f;
+        player.GetComponent<Hero>().attackCooldown *= 1.1f;
     }
 }

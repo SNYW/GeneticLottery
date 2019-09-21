@@ -162,9 +162,7 @@ public class Hero : MonoBehaviour
     {
         if (hasTarget())
         {
-            //print(Vector3.Distance(transform.position, target.gameObject.transform.position));
             return Vector3.Distance(transform.position, target.gameObject.transform.position) <= attackRange;
-            
         }
         else
         {

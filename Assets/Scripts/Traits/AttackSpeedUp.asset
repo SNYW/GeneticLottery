@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 246c5072f5073114abe9e767ae78a864, type: 3}
-  m_Name: New Trait
+  m_Name: AttackSpeedUp
   m_EditorClassIdentifier: 
-  traitName: 
-  description: 
-  icon: {fileID: 0}
-  cost: 0
+  traitName: ASP++
+  description: Attack Speed +10%
+  icon: {fileID: 21300000, guid: 72ffa5500c8449041a550dfa5661a25c, type: 3}
+  cost: 100
+  effects: {fileID: 0}

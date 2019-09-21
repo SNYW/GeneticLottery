@@ -15,3 +15,4 @@ MonoBehaviour:
   allTraits:
   - {fileID: 1220122648454485724, guid: 0ea7694c3b8f25a4f942b9993cb44113, type: 3}
   - {fileID: 1220122648454485724, guid: 840929dd70cd43e44b9791eba12d75ce, type: 3}
+  - {fileID: 1220122648454485724, guid: 3541849925560f347841f3e90bea3a37, type: 3}
