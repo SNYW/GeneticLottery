@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5993600476663658471}
   - component: {fileID: 8742321599135301475}
   - component: {fileID: 7553895257702351062}
+  - component: {fileID: 3262912855739188930}
   - component: {fileID: 2138324995}
   - component: {fileID: 2138324994}
   m_Layer: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5201390879462012738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,7 +96,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f60a9662492c4f40b298ef14a4626f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  player: {fileID: 0}
+  health: 100
+  attackPower: 1
+  attackCooldown: 3
+  cooldown: 0
+  speed: 2
+  damageType: Physical
+--- !u!114 &3262912855739188930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201390879462012738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdcac87eb32f464981e226bc1d7d2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  physicalResistance: 0
+  magicResistance: 0
+  HP: {fileID: 0}
 --- !u!50 &2138324995
 Rigidbody2D:
   serializedVersion: 4

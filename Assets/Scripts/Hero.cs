@@ -2,26 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
+    //Player Stats
+    public Playstat maxHealth;
+    public Playstat currentHealth;
+    public float strength;
+    public float speed;
+    public float attackRange;
 
+    //functional fields
     public List<GameObject> allTargets = new List<GameObject>();
     public Enemy target;
     private Transform EnemyHolder;
     public GameObject Center;
     public float visionRange;
     public Animator animator;
+    public Image healthBar;
 
-    public float speed;
-    public float attackRange;
+    
+    //status effects
     public bool canMove;
 
     //Code for directional movement tracking
     private Vector3 lastPos;
     public Vector3 velocity;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         lastPos = transform.position;
@@ -32,7 +40,6 @@ public class Hero : MonoBehaviour
         findNearestTarget(); 
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         
@@ -50,7 +57,7 @@ public class Hero : MonoBehaviour
     {
 
         getDirection();
-
+        updateHealthBar();
 
 
         if (!hasTarget())
@@ -83,6 +90,12 @@ public class Hero : MonoBehaviour
            animator.SetBool("attacking", true);
             
         }
+    }
+
+    private void updateHealthBar()
+    {
+        float healthPercentage = currentHealth.value / (maxHealth.value / 100);
+        healthBar.GetComponent<Image>().fillAmount = healthPercentage/100;
     }
 
     private void getDirection()

@@ -15,14 +15,11 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         cooldown = Time.time + spawnCooldown;
-        
     }
 
     private void Update()
     {
         checkSpawnTimer();
-
-
     }
 
     private void checkSpawnTimer()
