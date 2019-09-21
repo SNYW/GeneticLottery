@@ -11,6 +11,8 @@ public class Hero : MonoBehaviour
     public Playstat currentHealth;
     public float strength;
     public float speed;
+    public float attackCooldown;
+    public float cooldown;
     public float attackRange;
 
     //functional fields
@@ -32,6 +34,10 @@ public class Hero : MonoBehaviour
     
     void Start()
     {
+        cooldown = Time.time + attackCooldown;
+
+        currentHealth.value = maxHealth.value;
+
         lastPos = transform.position;
         animator.SetFloat("Speed", 0);
         canMove = true;
@@ -55,11 +61,31 @@ public class Hero : MonoBehaviour
 
     void Update()
     {
-
         getDirection();
         updateHealthBar();
+        checkMoveToCenter();
+        checkCanAttack();
+    }
 
+    private void checkCanAttack()
+    {
+        
+        if (hasTarget() && canMove && !inRange())
+        {
+            animator.SetBool("attacking", false);
+            animator.SetFloat("Speed", 1);
+            Vector3 moveTarget = new Vector3(target.transform.position.x, transform.position.y, 0);
+            transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
 
+        }
+        else if (hasTarget() && inRange())
+        {
+            attack();
+        }
+    }
+
+    private void checkMoveToCenter()
+    {
         if (!hasTarget())
         {
             print("Moving to centre");
@@ -75,20 +101,6 @@ public class Hero : MonoBehaviour
             Vector3 moveTarget = new Vector3(Center.transform.position.x, transform.position.y, 0);
             transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
 
-        }
-        else if (hasTarget() && canMove && !inRange())
-        {
-            animator.SetBool("attacking", false); 
-            animator.SetFloat("Speed", 1);
-            Vector3 moveTarget = new Vector3(target.transform.position.x, transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
-            
-        }
-        else if (hasTarget() && inRange())
-        {
-           attack();
-           animator.SetBool("attacking", true);
-            
         }
     }
 
@@ -116,12 +128,17 @@ public class Hero : MonoBehaviour
 
     private void attack()
     {
-        if(target.transform.position.x < transform.position.x)
+        animator.SetFloat("Speed", 0f);
+        if (target.transform.position.x < transform.position.x)
         {
             this.GetComponent<SpriteRenderer>().flipX = true;
         }
-        //print("Attacking -- "+target);
-        Destroy(target.gameObject, 0.2f);
+        if (cooldown <= Time.time)
+        {
+            animator.SetBool("attacking", true);
+            target.GetComponent<EnemyDamageManager>().takeDamage(strength, "Physical");
+            cooldown = Time.time + attackCooldown;
+        }
     }
 
     
@@ -145,6 +162,7 @@ public class Hero : MonoBehaviour
     {
         if (hasTarget())
         {
+            //print(Vector3.Distance(transform.position, target.gameObject.transform.position));
             return Vector3.Distance(transform.position, target.gameObject.transform.position) <= attackRange;
             
         }

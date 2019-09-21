@@ -19,7 +19,7 @@ public class TraitPanel : MonoBehaviour
         {
             print("refreshing " + option);
             option.GetComponent<TraitObject>().trait = null;
-            option.GetComponent<TraitObject>().trait = allTraits.getRandomTrait();
+            option.GetComponent<TraitObject>().traitObject = allTraits.getRandomTrait();
         }
     }
 }

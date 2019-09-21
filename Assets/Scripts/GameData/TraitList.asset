@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TraitList
   m_EditorClassIdentifier: 
   allTraits:
-  - {fileID: 11400000, guid: b18f90117d4724f48a11093eb07663f9, type: 2}
-  - {fileID: 11400000, guid: 0e3305dc1151c7c418efa8af807dcb89, type: 2}
+  - {fileID: 1220122648454485724, guid: 0ea7694c3b8f25a4f942b9993cb44113, type: 3}
+  - {fileID: 1220122648454485724, guid: 840929dd70cd43e44b9791eba12d75ce, type: 3}

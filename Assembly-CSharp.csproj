@@ -70,9 +70,14 @@
     <Compile Include="Assets\Scripts\GameData\AllTraits.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
+    <Compile Include="Assets\Scripts\PlayerStats\PlayerTraits.cs" />
     <Compile Include="Assets\Scripts\PlayerStats\Playstat.cs" />
     <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
+    <Compile Include="Assets\Scripts\Traits\SpeedUp.cs" />
+    <Compile Include="Assets\Scripts\Traits\StaticTrait.cs" />
+    <Compile Include="Assets\Scripts\Traits\StrengthUp.cs" />
     <Compile Include="Assets\Scripts\Traits\Trait.cs" />
+    <Compile Include="Assets\Scripts\Traits\TraitBehavaiour.cs" />
     <Compile Include="Assets\Sprites\Traits\TraitObject.cs" />
     <Compile Include="Assets\TraitPanel.cs" />
     <Reference Include="Unity.Timeline.Editor">

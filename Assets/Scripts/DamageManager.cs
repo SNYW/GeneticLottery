@@ -13,17 +13,17 @@ public class DamageManager : MonoBehaviour
     private void Start()
     {
         refreshResistances();
-        takeDamage(10, "Physical");
+       
     }
 
-    public float takeDamage(float flatDamage, string type)
+    public void takeDamage(float flatDamage, string type)
     {
         float resistance = (float)typeMap[type];
 
 
         float damageAmount = flatDamage - (flatDamage/100)*resistance;
         print(this + " takes " + flatDamage + " minus " + resistance+"% ="+damageAmount);
-        return damageAmount;
+        this.GetComponent<Hero>().currentHealth.value -= damageAmount;
     }
 
     public void refreshResistances()

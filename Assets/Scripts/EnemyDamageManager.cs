@@ -6,7 +6,6 @@ public class EnemyDamageManager : MonoBehaviour
 {
     public float physicalResistance;
     public float magicResistance;
-    public Playstat HP;
 
     private Hashtable typeMap = new Hashtable();
 
@@ -15,11 +14,11 @@ public class EnemyDamageManager : MonoBehaviour
         refreshResistances();
     }
 
-    public float takeDamage(float flatDamage, string type)
+    public void takeDamage(float flatDamage, string type)
     {
         float resistance = (float)typeMap[type];
         float damageAmount = flatDamage - (flatDamage / 100) * resistance;
-        return damageAmount;
+        this.GetComponent<Enemy>().currentHealth -= damageAmount;
     }
 
     public void refreshResistances()

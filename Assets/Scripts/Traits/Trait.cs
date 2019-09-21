@@ -8,10 +8,8 @@ public class Trait : ScriptableObject
 {
     public string traitName;
     public string description;
-
     public Sprite icon;
-
     public int cost;
-
+    public StaticTrait effects;
 
 }

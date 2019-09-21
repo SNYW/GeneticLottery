@@ -6,12 +6,12 @@ using UnityEngine;
 public class AllTraits : ScriptableObject
 {
 
-    public Trait[] allTraits;
+    public GameObject[] allTraits;
 
     
-    public Trait getRandomTrait()
+    public GameObject getRandomTrait()
     {
-        Trait randomTrait = allTraits[Random.Range(0, allTraits.Length)];
+        GameObject randomTrait = allTraits[Random.Range(0, allTraits.Length)];
         return randomTrait;
     }
 }
