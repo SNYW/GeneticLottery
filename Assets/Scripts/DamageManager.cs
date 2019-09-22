@@ -22,7 +22,7 @@ public class DamageManager : MonoBehaviour
 
 
         float damageAmount = flatDamage - (flatDamage/100)*resistance;
-        print(this + " takes " + flatDamage + " minus " + resistance+"% ="+damageAmount);
+        //print(this + " takes " + flatDamage + " minus " + resistance+"% ="+damageAmount);
         this.GetComponent<Hero>().currentHealth.value -= damageAmount;
     }
 

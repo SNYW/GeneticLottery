@@ -30,11 +30,14 @@ public class TraitObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        trait = traitObject.GetComponent<StaticTrait>().trait;
-        nameText.text = trait.traitName;
-        descriptionText.text = trait.description;
-        cost.text = trait.cost.ToString();
-        icon.sprite = trait.icon;
+        if (traitObject != null)
+        {
+            trait = traitObject.GetComponent<StaticTrait>().trait;
+            nameText.text = trait.traitName;
+            descriptionText.text = trait.description;
+            cost.text = trait.cost.ToString();
+            icon.sprite = trait.icon;
+        }
     }
 
     public void toggleDescription()
@@ -46,6 +49,12 @@ public class TraitObject : MonoBehaviour
     {
         GameObject newtrait = Instantiate(traitObject);
         newtrait.transform.parent = GameObject.Find("Traits").transform;
+        this.traitObject = null;
+        this.trait = null;
+        nameText.text = "SOLD";
+        descriptionText.text = null;
+        cost.text = null;
+        icon.sprite = null;
     }
 
 }

@@ -35,7 +35,7 @@ public class Hero : MonoBehaviour
     void Start()
     {
         cooldown = Time.time + attackCooldown;
-
+        transform.position = Center.transform.position;
         currentHealth.value = maxHealth.value;
 
         lastPos = transform.position;
@@ -88,7 +88,7 @@ public class Hero : MonoBehaviour
     {
         if (!hasTarget())
         {
-            print("Moving to centre");
+            //print("Moving to centre");
             if (Vector3.Distance(transform.position, Center.transform.position) > 0.5)
             {
                 animator.SetFloat("Speed", 1);

@@ -17,7 +17,7 @@ public class TraitPanel : MonoBehaviour
     {
         foreach(GameObject option in traitOptions)
         {
-            print("refreshing " + option);
+            //print("refreshing " + option);
             option.GetComponent<TraitObject>().trait = null;
             option.GetComponent<TraitObject>().traitObject = allTraits.getRandomTrait();
         }

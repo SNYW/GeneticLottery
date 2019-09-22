@@ -7,11 +7,11 @@ public class AttackSpeedUp : StaticTrait
 {
 
     private GameObject player;
-    // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.Find("Hero");
-        player.GetComponent<Hero>().attackCooldown /= 0.9f;
+        player.GetComponent<Hero>().attackCooldown *= 0.9f;
     }
 
     // Update is called once per frame
