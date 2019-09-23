@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\DescriptionText.cs" />
     <Compile Include="Assets\ExperienceDisplay.cs" />
+    <Compile Include="Assets\PlayerStats\PlayerTraits.cs" />
+    <Compile Include="Assets\PlayerStats\Playstat.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyDamageManager.cs" />
@@ -71,8 +73,6 @@
     <Compile Include="Assets\Scripts\GameData\AllTraits.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
-    <Compile Include="Assets\Scripts\PlayerStats\PlayerTraits.cs" />
-    <Compile Include="Assets\Scripts\PlayerStats\Playstat.cs" />
     <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
     <Compile Include="Assets\Scripts\Traits\AttackSpeedUp.cs" />
     <Compile Include="Assets\Scripts\Traits\HealthRegen.cs" />

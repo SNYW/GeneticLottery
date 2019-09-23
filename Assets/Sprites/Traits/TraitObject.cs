@@ -19,13 +19,6 @@ public class TraitObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trait = traitObject.GetComponent<StaticTrait>().trait;
-        showDesc = false;
-
-        nameText.text = trait.traitName;
-        descriptionText.text = trait.description;
-        cost.text = trait.cost.ToString();
-        icon.sprite = trait.icon;
     }
 
     private void FixedUpdate()

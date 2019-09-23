@@ -431,7 +431,7 @@ MonoBehaviour:
   speed: 1
   attackCooldown: 1
   cooldown: 0
-  attackRange: 0.4
+  attackRange: 0.8
   allTargets:
   - {fileID: 0}
   target: {fileID: 0}
