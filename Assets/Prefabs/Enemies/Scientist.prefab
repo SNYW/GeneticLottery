@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6074013089556698885}
   - component: {fileID: 7309676128033482153}
   - component: {fileID: 5117726006972307178}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: enemyDetails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 2138324995}
   - component: {fileID: 2138324994}
   - component: {fileID: 7465605628659654934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scientist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,8 @@ MonoBehaviour:
   attacking: 0
   animator: {fileID: 7465605628659654934}
   isDead: 0
-  maximumLoot: 5
+  maximumLoot: 10
+  minimumLoot: 5
   possibleDrops:
   - {fileID: 3533637909129232269, guid: 4f42eb8f03ff1dc439dc570ae5d0e94f, type: 3}
   velocity: {x: 0, y: 0, z: 0}
@@ -250,7 +251,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!61 &2138324994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03342396, y: 0.035281003}
+  m_Offset: {x: -0.035220496, y: -0.02580142}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -275,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20920217, y: 0.5100179}
+  m_Size: {x: 0.24872635, y: 0.58187985}
   m_EdgeRadius: 0
 --- !u!95 &7465605628659654934
 Animator:
@@ -307,7 +308,7 @@ GameObject:
   - component: {fileID: 4976991539535525537}
   - component: {fileID: 3278350962650759533}
   - component: {fileID: 764196395082961374}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +385,7 @@ GameObject:
   - component: {fileID: 2070827995007495806}
   - component: {fileID: 3305665558185265473}
   - component: {fileID: 7624911190503316430}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBarBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +460,7 @@ GameObject:
   - component: {fileID: 1961421975842251239}
   - component: {fileID: 1097541209188050399}
   - component: {fileID: 8473269590820616512}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

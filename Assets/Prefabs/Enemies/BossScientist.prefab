@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.02, y: 0.917}
+  m_AnchoredPosition: {x: -0.015, y: 0.558}
   m_SizeDelta: {x: 3.7647, y: 1.9391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6074013089556698885
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2138324994}
   - component: {fileID: 7465605628659654934}
   m_Layer: 10
-  m_Name: Labworm
+  m_Name: BossScientist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 5201390879462012738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 8071620088185958012}
   m_Father: {fileID: 0}
@@ -174,10 +174,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1083127050800395587, guid: 703e8abb1e78ca44089f36e2532c45e4,
+  m_Sprite: {fileID: 4277136177607117104, guid: 3a9febce1c2aff04ea82a220f31f3e39,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.65999997, y: 1.2563504}
@@ -199,21 +199,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyName: Lab Worm
-  maxHealth: 1
+  enemyName: Boss Scientist
+  maxHealth: 200
   currentHealth: 0
-  attackPower: 1
-  attackCooldown: 1
+  attackPower: 20
+  attackCooldown: 5
   cooldown: 0
-  speed: 1.5
-  attackRange: 0.5
+  speed: 1
+  attackRange: 1
   damageType: Physical
   healthBar: {fileID: 8473269590820616512}
   attacking: 0
   animator: {fileID: 7465605628659654934}
   isDead: 0
-  maximumLoot: 6
-  minimumLoot: 3
+  maximumLoot: 30
+  minimumLoot: 20
   possibleDrops:
   - {fileID: 3533637909129232269, guid: 4f42eb8f03ff1dc439dc570ae5d0e94f, type: 3}
   velocity: {x: 0, y: 0, z: 0}
@@ -265,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.038259536, y: 0.029236615}
+  m_Offset: {x: -0.04220429, y: -0.22367465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -276,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46065456, y: 0.38187397}
+  m_Size: {x: 0.05783683, y: 0.18613338}
   m_EdgeRadius: 0
 --- !u!95 &7465605628659654934
 Animator:
@@ -288,7 +288,7 @@ Animator:
   m_GameObject: {fileID: 5201390879462012738}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afc378ea77635134883112396411f85b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 559e0e32dc62fc74db1e2acf53ead94d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

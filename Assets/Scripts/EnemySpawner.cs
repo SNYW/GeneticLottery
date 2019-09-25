@@ -6,11 +6,14 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyTypes;
+    public GameObject[] bossTypes;
     public GameObject[] Spawners;
     public int enemyAmount;
+    public int bossAmount;
     public float spawnCooldown;
     private float cooldown;
     public GameObject Center;
+    public bool canSpawnBoss;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         checkSpawnTimer();
+        spawnBoss();
     }
 
     private void checkSpawnTimer()
@@ -38,6 +42,18 @@ public class EnemySpawner : MonoBehaviour
         GameObject s = Instantiate(enemy, spawnplace , Quaternion.identity);
         s.transform.parent = GameObject.Find("Enemies").transform;
         enemyAmount --;
+    }
+    
+    void spawnBoss()
+    {
+        if(enemyAmount == 0 && canSpawnBoss)
+        {
+            Vector3 spawnplace = new Vector3(Spawners[UnityEngine.Random.Range(0, Spawners.Length)].transform.position.x, Center.transform.position.y, 0);
+            GameObject s = Instantiate(bossTypes[UnityEngine.Random.Range(0, bossTypes.Length)],
+                           spawnplace, Quaternion.identity);
+            s.transform.parent = GameObject.Find("Enemies").transform;
+            enemyAmount--;
+        }
     }
 
 

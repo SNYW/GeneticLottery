@@ -114,7 +114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.3, y: 193.5}
+  m_AnchoredPosition: {x: 21.6, y: 193.5}
   m_SizeDelta: {x: 64.62, y: 114.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3106214936811409272
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3106214937335625208}
   - component: {fileID: 3106214937335625209}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TraitOption (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,8 +275,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3106214937335625211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -142.5, y: -70.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -116.9, y: -63.7, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3106214937784152077}
@@ -304,6 +304,7 @@ MonoBehaviour:
   descriptionText: {fileID: 3106214936811409275}
   cost: {fileID: 3106214937127152720}
   icon: {fileID: 3106214937784152079}
+  currency: {fileID: 11400000, guid: 7d2288687ce278c4c90464660ef26892, type: 2}
   showDesc: 0
   trait: {fileID: 11400000, guid: b18f90117d4724f48a11093eb07663f9, type: 2}
 --- !u!1 &3106214937784152078
@@ -318,7 +319,7 @@ GameObject:
   - component: {fileID: 3106214937784152076}
   - component: {fileID: 3106214937784152079}
   - component: {fileID: 188300830817097258}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +451,7 @@ GameObject:
   - component: {fileID: 3106214937937474321}
   - component: {fileID: 3106214937937474320}
   - component: {fileID: 3106214937937474323}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExpandDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}

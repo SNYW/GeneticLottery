@@ -12,6 +12,7 @@ public class TraitObject : MonoBehaviour
     public Text descriptionText;
     public Text cost;
     public Image icon;
+    public Playstat currency;
 
     public bool showDesc;
 
@@ -40,6 +41,7 @@ public class TraitObject : MonoBehaviour
 
     public void addTrait()
     {
+        currency.value -= int.Parse(cost.text);
         GameObject newtrait = Instantiate(traitObject);
         newtrait.transform.parent = GameObject.Find("Traits").transform;
         this.traitObject = null;

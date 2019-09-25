@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     //code for loot drops
     public int maximumLoot;
+    public int minimumLoot;
     public GameObject[] possibleDrops;
 
 
@@ -42,8 +43,8 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetBool("Attacking", attacking);
-        getDirection();
         updateHealthBar();
+        getDirection();
     }
 
 
@@ -57,14 +58,16 @@ public class Enemy : MonoBehaviour
     {
         if (!isDead)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) >= attackRange)
+            if (Vector3.Distance(transform.position, player.transform.position) >= attackRange+(transform.lossyScale.x/10))
             {
+                animator.SetFloat("Speed", 1);
                 attacking = false;
                 Vector3 moveTarget = new Vector3(player.transform.position.x, c.transform.position.y, 0);
                 transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
             }
             else
             {
+                animator.SetFloat("Speed", 0);
                 attack();
             }
         }
@@ -111,11 +114,12 @@ public class Enemy : MonoBehaviour
 
     void onDeath()
     {
-        int dropamount = Random.Range(1, maximumLoot);
+        int dropamount = Random.Range(minimumLoot, maximumLoot);
         for (int i = 0; i < dropamount; i++)
         {
             GameObject loot = Instantiate(possibleDrops[Random.Range(0, possibleDrops.Length)], transform.position, Quaternion.identity);
-            loot.GetComponent<Rigidbody2D>().AddForce(transform.up*10, ForceMode2D.Force);
+            loot.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(2, 4), ForceMode2D.Impulse);
+            loot.GetComponent<Rigidbody2D>().AddTorque(Random.Range(2, 4));
             Destroy(gameObject);
         }
     }
