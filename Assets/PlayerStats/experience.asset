@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: experience
   m_EditorClassIdentifier: 
   statname: Experience
-  value: 253.3
+  value: 60

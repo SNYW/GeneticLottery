@@ -18,10 +18,17 @@ public class Enemy : MonoBehaviour
     public Image healthBar;
     public bool attacking;
     public Animator animator;
+    public bool isDead;
+
+    //code for loot drops
+    public int maximumLoot;
+    public GameObject[] possibleDrops;
+
 
     //Code for directional movement tracking
     private Vector3 lastPos;
     public Vector3 velocity;
+    private GameObject c;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +36,7 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         player = GameObject.Find("Hero");
         cooldown = Time.time + attackCooldown;
+        c = GameObject.Find("Center");
     }
 
     private void FixedUpdate()
@@ -36,27 +44,30 @@ public class Enemy : MonoBehaviour
         animator.SetBool("Attacking", attacking);
         getDirection();
         updateHealthBar();
-        player = GameObject.Find("Hero");
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
-        GameObject c = GameObject.Find("Center");
-        if (Vector3.Distance(transform.position, player.transform.position) >= attackRange)
+        moveToPlayer();
+    }
+
+    void moveToPlayer()
+    {
+        if (!isDead)
         {
-            attacking = false;
-            Vector3 moveTarget = new Vector3(player.transform.position.x, c.transform.position.y, 0);
-            transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, player.transform.position) >= attackRange)
+            {
+                attacking = false;
+                Vector3 moveTarget = new Vector3(player.transform.position.x, c.transform.position.y, 0);
+                transform.position = Vector3.MoveTowards(transform.position, moveTarget, speed * Time.deltaTime);
+            }
+            else
+            {
+                attack();
+            }
         }
-        else
-        {
-            attack();
-        }
-        
-        
     }
 
     public void attack()
@@ -79,8 +90,7 @@ public class Enemy : MonoBehaviour
         healthBar.GetComponent<Image>().fillAmount = healthPercentage / 100;
         if(currentHealth <= 0)
         {
-
-            Destroy(transform.gameObject);
+            onDeath();
         }
     }
 
@@ -97,6 +107,17 @@ public class Enemy : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().flipX = false;
         }
-
     }
+
+    void onDeath()
+    {
+        int dropamount = Random.Range(1, maximumLoot);
+        for (int i = 0; i < dropamount; i++)
+        {
+            GameObject loot = Instantiate(possibleDrops[Random.Range(0, possibleDrops.Length)], transform.position, Quaternion.identity);
+            loot.GetComponent<Rigidbody2D>().AddForce(transform.up*10, ForceMode2D.Force);
+            Destroy(gameObject);
+        }
+    }
+
 }

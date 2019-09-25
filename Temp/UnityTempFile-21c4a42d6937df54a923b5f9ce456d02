@@ -303,6 +303,7 @@ Assets\Scripts\DamageManager.cs
 Assets\Scripts\Enemies\Enemy.cs
 Assets\Scripts\EnemyDamageManager.cs
 Assets\Scripts\EnemySpawner.cs
+Assets\Scripts\EXPDrop.cs
 Assets\Scripts\GameData\AllTraits.cs
 Assets\Scripts\GameManager.cs
 Assets\Scripts\Hero.cs
