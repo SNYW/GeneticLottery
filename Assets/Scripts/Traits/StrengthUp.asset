@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traitName: STR++
   description: Physical Attack +10%
-  icon: {fileID: 21300000, guid: 75305ecdb95915a4fb8ee1ccc5c6d831, type: 3}
-  cost: 100
+  icon: {fileID: 21300000, guid: 0933eea7510812845949d4e68a3fa5d5, type: 3}
+  cost: 1
+  effects: {fileID: 0}

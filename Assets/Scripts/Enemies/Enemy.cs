@@ -118,8 +118,8 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < dropamount; i++)
         {
             GameObject loot = Instantiate(possibleDrops[Random.Range(0, possibleDrops.Length)], transform.position, Quaternion.identity);
-            loot.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(2, 4), ForceMode2D.Impulse);
-            loot.GetComponent<Rigidbody2D>().AddTorque(Random.Range(2, 4));
+            loot.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(2, 5), ForceMode2D.Impulse);
+            loot.GetComponent<Rigidbody2D>().AddTorque(Random.Range(2, 10));
             Destroy(gameObject);
         }
     }

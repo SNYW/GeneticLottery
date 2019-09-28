@@ -7,19 +7,37 @@ public class TraitPanel : MonoBehaviour
 
     public GameObject[] traitOptions;
     public AllTraits allTraits;
+    public activeTraitsList activeTraitsList;
+    public float cost;
 
     void Start()
     {
-        refreshTraitOptions();
+        initialrefreshTraitOptions();
     }
 
+    public void initialrefreshTraitOptions()
+    {
+        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        foreach (GameObject option in traitOptions)
+        {
+            
+            option.GetComponent<TraitObject>().trait = null;
+            option.GetComponent<TraitObject>().traitObject = gm.getRandomTrait();
+        }
+    }
     public void refreshTraitOptions()
     {
-        foreach(GameObject option in traitOptions)
+        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (gm.currency.value >= cost)
         {
-            //print("refreshing " + option);
-            option.GetComponent<TraitObject>().trait = null;
-            option.GetComponent<TraitObject>().traitObject = allTraits.getRandomTrait();
+            gm.currency.value -= cost;
+            foreach (GameObject option in traitOptions)
+            {
+
+                option.GetComponent<TraitObject>().trait = null;
+                option.GetComponent<TraitObject>().traitObject = gm.getRandomTrait();
+            }
         }
     }
 }

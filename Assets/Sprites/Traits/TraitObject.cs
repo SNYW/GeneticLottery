@@ -17,6 +17,8 @@ public class TraitObject : MonoBehaviour
     public bool showDesc;
 
     public Trait trait;
+
+    public GameObject traitStackManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +44,8 @@ public class TraitObject : MonoBehaviour
     public void addTrait()
     {
         currency.value -= int.Parse(cost.text);
-        GameObject newtrait = Instantiate(traitObject);
-        newtrait.transform.parent = GameObject.Find("Traits").transform;
+        print(traitObject);
+        GameObject.Find("GameManager").GetComponent<GameManager>().addNewTrait(gameObject);
         this.traitObject = null;
         this.trait = null;
         nameText.text = "SOLD";

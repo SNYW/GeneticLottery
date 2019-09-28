@@ -66,12 +66,13 @@
     <Compile Include="Assets\ExperienceDisplay.cs" />
     <Compile Include="Assets\PlayerStats\PlayerTraits.cs" />
     <Compile Include="Assets\PlayerStats\Playstat.cs" />
+    <Compile Include="Assets\Scripts\activeTraitsList.cs" />
+    <Compile Include="Assets\Scripts\AllTraits.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyDamageManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\EXPDrop.cs" />
-    <Compile Include="Assets\Scripts\GameData\AllTraits.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
@@ -82,6 +83,8 @@
     <Compile Include="Assets\Scripts\Traits\StrengthUp.cs" />
     <Compile Include="Assets\Scripts\Traits\Trait.cs" />
     <Compile Include="Assets\Scripts\Traits\TraitBehavaiour.cs" />
+    <Compile Include="Assets\Scripts\TraitStack.cs" />
+    <Compile Include="Assets\Scripts\TraitStackObject.cs" />
     <Compile Include="Assets\Sprites\Traits\TraitObject.cs" />
     <Compile Include="Assets\TraitPanel.cs" />
     <Reference Include="Unity.Timeline.Editor">

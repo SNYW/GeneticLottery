@@ -5,13 +5,11 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AllTraits : ScriptableObject
 {
-
-    public GameObject[] allTraits;
-
+    public List<GameObject> allTraits;
     
     public GameObject getRandomTrait()
     {
-        GameObject randomTrait = allTraits[Random.Range(0, allTraits.Length)];
+        GameObject randomTrait = allTraits[Random.Range(0, allTraits.Count)];
         return randomTrait;
     }
 }
